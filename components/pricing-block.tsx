@@ -28,7 +28,9 @@ const PricingBlock: FC<Props> = ({ data, priceVariant }) => {
             <span className="text-[44px] whitespace-nowrap">
               ${priceVariant === 1 ? data.inGamePrice : data.permanentlyPrice}
             </span>
-            <span className="text-base text-[#757575]">/InGame Season</span>
+            <span className="text-base text-[#757575]">
+              {priceVariant === 1 ? "/InGame Season" : "/Permanently"}
+            </span>
           </span>
         </CardHeader>
         <CardContent>
@@ -39,7 +41,7 @@ const PricingBlock: FC<Props> = ({ data, priceVariant }) => {
           </ul>
         </CardContent>
         <CardFooter className="items-center flex inset-0">
-          <Button size="lg" className="flex px-32">
+          <Button size="lg" className="flex px-32 whitespace-nowrap">
             Buy Now
           </Button>
         </CardFooter>
